@@ -9,21 +9,22 @@ import Products from './pages/Product/Products/index'
 import NewArrivals from './pages/Product/NewArrival'
 import Offers from './pages/Product/Offer'
 import TopSelling from './pages/Product/TopProduct'
+import HomeLayout from './pages/Product/HomeLayout'
 
 
 const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="home" element={<Home />} />
-        <Route path="/*" element={<Home />}>
-          <Route path="products" element={<Products />} />
-          <Route path="new-arrivals" element={<NewArrivals />} />
-          <Route path="offers" element={<Offers />} />
-          <Route path="top-selling" element={<TopSelling />} />
+        <Route path="/" element={<Home />} >
+          <Route path="/" element={<HomeLayout />} />
+          <Route path="/home" element={<HomeLayout />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/new-arrivals" element={<NewArrivals />} />
+          <Route path="/offers" element={<Offers />} />
+          <Route path="/top-selling" element={<TopSelling />} />
+          <Route path="/*" element={<NotFound />} />
         </Route>
-        <Route path="/*" element={<NotFound />} /> {/* This line was adjusted */}
       </Routes>
     </Router>
   )

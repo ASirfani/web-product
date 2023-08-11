@@ -1,24 +1,21 @@
 import React from 'react'
 import './index.css'
-import { Link, Outlet } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 const Menu = () => {
   return (
-
     <>
-
       <div className='container'>
         <div className='subsMenu'>
-          <div><Link to="/"><span>Home</span></Link></div>
-          <div><Link to="/products"><span>Products</span></Link></div>
-          <div><Link to="/new-arrivals"><span>New Arrivals</span></Link></div>
-          <div><Link to="/offers"><span>Offer</span></Link></div>
-          <div><Link to="/top-selling"><span>Top Selling</span></Link></div>
+          <div><NavLink to="/home" activeClassName="active" ><span>Home</span></NavLink></div>
+          <div><NavLink to="/products"><span>Products</span></NavLink></div>
+          <div><NavLink to="/new-arrivals"><span>New Arrivals</span></NavLink></div>
+          <div><NavLink to="/offers"><span>Offer</span></NavLink></div>
+          <div><NavLink to="/top-selling"><span>Top Selling</span></NavLink></div>
         </div>
       </div>
-      <div className='layoutProduct'>
+      <div className='container'>
         <Outlet />
       </div>
-
     </>
   )
 }

@@ -14,7 +14,6 @@ const Home = () => {
             <SearchMenu />
             <Menu />
             <Footer />
-            
         </>
     )
 
