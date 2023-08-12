@@ -6,6 +6,7 @@ import './index.css';
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { BiMailSend } from "react-icons/bi";
 import { CiLocationOn } from 'react-icons/ci'
+import { NavLink } from 'react-router-dom';
 
 
 
@@ -32,11 +33,11 @@ const Footer = () => {
             <div className='col categories'>
               <h5>CATEGORIES</h5>
               <ul className='footerFontTxt txtwhite'>
-                <li><a href='#'> <span className='txtwhite footerFontTxt '>Hot deals</span></a></li>
-                <li> <a href='#'><span className='txtwhite footerFontTxt'>Laptops</span></a></li>
-                <li> <a href='#'><span className='txtwhite footerFontTxt '>Smartphones</span></a></li>
-                <li> <a href='#'><span className='txtwhite footerFontTxt '>Cameras</span></a></li>
-                <li> <a href='#'><span className='txtwhite footerFontTxt '>Accessories</span></a></li>
+                <li>  <NavLink to={"/products"}><span className='txtwhite footerFontTxt '>Beauty</span></NavLink>     </li>
+                <li>  <NavLink to={"/offers"}><span className='txtwhite footerFontTxt '>Hot offers</span></NavLink>   </li>
+                <li>  <NavLink to={"new-arrivals"}><span className='txtwhite footerFontTxt '>New Arrivals</span></NavLink> </li>
+                <li>  <NavLink to={"/top-selling"}><span className='txtwhite footerFontTxt '>Top selling</span></NavLink>     </li>
+                <li>  <NavLink to={"/home"}><span className='txtwhite footerFontTxt '>Products</span></NavLink> </li>
               </ul>
             </div>
 
@@ -44,11 +45,11 @@ const Footer = () => {
             <div className='col information'>
               <h5>INFORMATION</h5>
               <ul className='footerFontTxt txtwhite'>
-                <li><a href='#'> <span className='txtwhite footerFontTxt '> About Us</span></a></li>
-                <li> <a href='#'> <span className='txtwhite footerFontTxt'> Contact Us</span></a></li>
+                <li><NavLink to={"/about-us"}><span className='txtwhite footerFontTxt '>About Us</span></NavLink></li>
+                <li> <NavLink to={"/contact-us"}><span className='txtwhite footerFontTxt '>Contact Us</span></NavLink></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Privacy Policy</span></a></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Orders and Returns</span></a></li>
-                <li> <a href='#'> <span className='txtwhite footerFontTxt '> Terms & Conditions</span></a></li>
+                <li> <NavLink to={"/Terms-Conditions"}><span className='txtwhite footerFontTxt'>Terms & Conditions</span></NavLink></li>
               </ul>
             </div>
             <div className='col service'>

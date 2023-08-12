@@ -10,7 +10,6 @@ const Products = () => {
        <TemplateCard/>
        <TemplateCard/>
        <TemplateCard/>
-       
       </div>
     </div>
   )
