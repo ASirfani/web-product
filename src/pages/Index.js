@@ -1,7 +1,7 @@
 
 import React from "react";
 import TopMenu from "./TopMenu";
-import SearchMenu from "./SearchMenu";
+import SearchMenu from "../container/SearchMenuContainer"
 import Menu from "./Menu";
 import Footer from "./Footer";
 

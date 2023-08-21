@@ -22,10 +22,9 @@ const Footer = () => {
               <h5>ABOUT US</h5>
               <ul className='footerFontTxt txtwhite'>
                 <li><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</span></li>
-                <li><a className='col ' href='#'><BsFillTelephoneFill className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt '> +0123456789</span></a></li>
-                <li> <a className='col ' href='#'><BiMailSend className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt'> Example@gmail.com</span></a>
-                </li>
-                <li> <a className='col ' href='#'><CiLocationOn className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt '> 1734 Stonecoal Road</span></a></li>
+                <li>  <a className='col ' href='#'><BsFillTelephoneFill className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt '> +0123456789</span></a></li>
+                <li>  <a className='col ' href='#'><BiMailSend className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt'> Example@gmail.com</span></a></li>
+                <li>  <a className='col ' href='#'><CiLocationOn className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite footerFontTxt '> 1734 Stonecoal Road</span></a></li>
               </ul>
             </div>
 
@@ -49,17 +48,19 @@ const Footer = () => {
                 <li> <NavLink to={"/contact-us"}><span className='txtwhite footerFontTxt '>Contact Us</span></NavLink></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Privacy Policy</span></a></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Orders and Returns</span></a></li>
-                <li> <NavLink to={"/Terms-Conditions"}><span className='txtwhite footerFontTxt'>Terms & Conditions</span></NavLink></li>
+                <li> <NavLink to={"/terms-conditions"}><span className='txtwhite footerFontTxt'>Terms & Conditions</span></NavLink></li>
               </ul>
+              Checkout-Page
             </div>
             <div className='col service'>
               <h5>SERVICE</h5>
               <ul className='footerFontTxt txtwhite'>
                 <li><a href='#'> <span className='txtwhite footerFontTxt '> My Account</span></a></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt'> View Cart</span></a></li>
-                <li> <a href='#'> <span className='txtwhite footerFontTxt '> Wishlist</span></a></li>
+                <li> <NavLink to={"/checkout-page"}><span className='txtwhite footerFontTxt'>Checkout-Page</span></NavLink></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Track My Order</span></a></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Help</span></a></li>
+                <li> <NavLink to={"/cartPage"}><span className='txtwhite footerFontTxt'>Checkout-Page</span></NavLink></li>
 
               </ul>
             </div>

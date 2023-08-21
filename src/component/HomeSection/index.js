@@ -1,12 +1,13 @@
 import React from 'react';
 import './index.css';
-import TemplateCard from '../TemplateCard';
+import TemplateContainer from '../../container/TemplateContainer';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { NavLink } from 'react-router-dom';
+import productsData from '../../data.json';
 
-const HomeSection = ({ title, speed, slidesToScroll, autoplaySpeed, autoplay ,link}) => {
+const HomeSection = ({ title, speed, slidesToScroll, autoplaySpeed, autoplay, link }) => {
   const sliderSettings = {
     infinite: true,
     speed: speed ? speed : 1000,
@@ -17,6 +18,7 @@ const HomeSection = ({ title, speed, slidesToScroll, autoplaySpeed, autoplay ,li
     slidesToShow: 1,
     focusOnSelect: true,
   };
+  const displayedProducts = productsData.slice(0, 4);
 
   return (
     <div className="newproducts">
@@ -32,19 +34,29 @@ const HomeSection = ({ title, speed, slidesToScroll, autoplaySpeed, autoplay ,li
         <Slider {...sliderSettings}>
           <div >
             <div className='sliders'>
-              <TemplateCard />
-              <TemplateCard />
-              <TemplateCard />
-              <TemplateCard />
+              {displayedProducts.map((product, index) => (
+                <TemplateContainer
+                  key={index}
+                  name={product.name}
+                  price={product.price}
+
+
+                />
+              ))}
             </div>
 
           </div>
           <div >
             <div className='sliders'>
-              <TemplateCard />
-              <TemplateCard />
-              <TemplateCard />
-              <TemplateCard />
+              {displayedProducts.map((product, index) => (
+                <TemplateContainer
+                  key={index}
+                  name={product.name}
+                  price={product.price}
+
+
+                />
+              ))}
             </div>
 
           </div>
