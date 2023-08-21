@@ -50,7 +50,6 @@ const Footer = () => {
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Orders and Returns</span></a></li>
                 <li> <NavLink to={"/terms-conditions"}><span className='txtwhite footerFontTxt'>Terms & Conditions</span></NavLink></li>
               </ul>
-              Checkout-Page
             </div>
             <div className='col service'>
               <h5>SERVICE</h5>
@@ -60,7 +59,6 @@ const Footer = () => {
                 <li> <NavLink to={"/checkout-page"}><span className='txtwhite footerFontTxt'>Checkout-Page</span></NavLink></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Track My Order</span></a></li>
                 <li> <a href='#'> <span className='txtwhite footerFontTxt '> Help</span></a></li>
-                <li> <NavLink to={"/cartPage"}><span className='txtwhite footerFontTxt'>Checkout-Page</span></NavLink></li>
 
               </ul>
             </div>

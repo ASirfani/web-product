@@ -33,8 +33,9 @@ const TemplateCard = (props) => {
     };
     const navigate = useNavigate()
     const openProduct = () => {
-        navigate('/product-details')
+     navigate(`/product-details/${props.name}/${props.price}`)
     }
+    
     const handlePlusClick = () => {
         console.log('Plus icon clicked');
     };

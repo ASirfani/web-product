@@ -14,7 +14,7 @@ import TermsAndConditions from "./pages/TermsAndConditions";
 import ProductSelectionPage from "./container/WIshListCartContainer";
 import CheckoutPage from "./pages/payment/CheckoutPage";
 import CartPage from "./container/CartPageContainer";
-import ProductDetails from "./component/ProductDetails";
+import ProductDetailsContaine from "./container/ProductDetailsContainer";
 const App = () => {
   return (
     <Router>
@@ -26,8 +26,7 @@ const App = () => {
           <Route path="/new-arrivals"   element={<NewArrivals />} />
           <Route path="/offers"         element={<Offers />} />
           <Route path="/top-selling"    element={<TopSelling />} />
-          <Route path="/product-details" element={<ProductDetails/>}/>
-          
+          <Route path="/product-details/:name/:price" element={<ProductDetailsContaine />} />
           {/* About us footer*/}
           <Route path="/contact-us"        element={<Contact/>} />
           <Route path="/About-us"       element={<About />} />

@@ -2,7 +2,10 @@ import React from 'react'
 
 const TopProduct = () => {
   return (
-    <div><p>top selling</p></div>
+    <div className='about-us'>
+      <h1 className='about titlePage'>Top selling</h1>
+      
+      </div>
   )
 }
 

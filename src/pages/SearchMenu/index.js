@@ -52,18 +52,19 @@ const SearchMenu = (props) => {
                 <NavLink className={"text-white"} to={"/select-card"}>
                   <div>
                     <AiOutlineHeart size={22} />
-                    <span className='notificationNum bg-info'>{favoriteCartItems}</span>
+                    {favoriteCartItems>0 ? <span className='notificationNum bg-info'>{favoriteCartItems}</span> : ""}
                   </div>
                   <div>
                     <p>Your Wishlist</p>
                   </div>
-                  </NavLink>
+                </NavLink>
               </div>
               {/* your card */}
               <div className='flex-nowrap text-white yourcard'>
                 <NavLink className={"text-white"} to={"/cartPage"}>
                   <div> <BiSolidShoppingBagAlt size={22} />
-                    <span className='notificationNum'>{cartItemsCount}</span></div>
+                    {cartItemsCount > 0 ? <span className='notificationNum'>{cartItemsCount}</span> : ""}
+                  </div>
                   <p>Your Card</p>
                 </NavLink>
               </div>

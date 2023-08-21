@@ -92,3 +92,45 @@ a:hover {
     margin-left: 10px;
     align-items: baseline;
 }
+.mobile-size{
+    display: none;
+}
+
+/* ... (existing styles) ... */
+
+@media (max-width: 767px) {
+    /* Adjust styles for tablet and mobile screens */
+    .topmenu {
+      display: none;
+    }
+
+    .mobile-size{
+        display:  flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px;
+        gap: 20px;
+        color: #ffffff;
+        
+
+    }
+
+   .mobileMenu {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        padding: 10px 0;
+        font-size: 17px;
+       
+    }
+
+    .mobileMenu div:hover{
+        background-color: red;
+
+    }
+
+    
+  
+    
+  }
+  

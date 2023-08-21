@@ -1,10 +1,33 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/anchor-has-content */
-import React from 'react'
+import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
 import './index.css'
-const ProductDetails = () => {
-    return (
-        <div style={{backgroundColor:'#fff'}}>
+const ProductDetails = (props) => {
+    const [message, setMessage] = useState('');
+
+    const showMessage = (msg) => {
+        setMessage(msg);
+        setTimeout(() => {
+            setMessage('');
+        }, 1000);
+    };
+    const { name, price } = useParams();
+
+    const isItemInCart = props.cardData.some(item => item.name === name);
+
+    const handleCartClick = () => {
+        if (!isItemInCart) {
+            props.addToCartHandler({ name: name, price: price })
+            showMessage("Add to your cart list")
+        } else {
+            showMessage("Already added to you favorite list")
+        }
+    };
+    return (<><div className="message-container">
+        {message && <div className="message">{message}</div>}
+    </div>
+        <div style={{ backgroundColor: '#fff' }}>
             {/* back link */}
             <div className="breadcumb_area">
                 <div className="container">
@@ -21,43 +44,41 @@ const ProductDetails = () => {
                     <div className='productViews'>
                         <div className="single_product_thumb">
                             <div id="product_details_slider" className="carousel slide" data-ride="carousel">
-
                                 <div className="carousel-inner">
                                     <div className="carousel-item active">
                                         <a className="gallery_img" href="https://websitedemos.net/plant-shop-02/wp-content/uploads/sites/931/2021/08/plants-ecommerce-product-featured-img-17.jpg">
                                             <img className="d-block w-100" src="https://websitedemos.net/plant-shop-02/wp-content/uploads/sites/931/2021/08/plants-ecommerce-product-featured-img-17.jpg" alt="First slide" />
                                         </a>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                         {/* detailsProduct */}
                         <div className="col-12 col-md-6" >
                             <div className="single_product_desc">
-                                <h4 className="title"><a href="#">Long Yellow Dress</a></h4>
-                                <h4 className="price">$ 39.99</h4>
+                                <h4 className="title"><a href="#">{name}</a></h4>
+                                <h4 className="price">$ {price}</h4>
                                 <p className="available">Available: <span className="text-muted">In Stock</span></p>
                                 <div className="widget size mb-50">
                                     <h6 className="widget-title">Size</h6>
                                     <div className="widget-desc">
                                         <ul>
                                             <li><a href="#">32</a></li>
-                                            
+
                                         </ul>
                                     </div>
                                 </div>
 
-                                <form className="cart clearfix mb-50 d-flex" method="post">
+                                <div className="cart clearfix mb-50 d-flex" >
                                     <div className="quantity">
-                                        <span className="qty-minus" 
+                                        <span className="qty-minus"
                                         ><i className="fa fa-minus" aria-hidden="true"></i></span>
-                                        <input type="number" className="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1"  />
-                                        <span className="qty-plus" 
+                                        <input type="number" className="qty-text" id="qty" step="1" min="1" max="12" name="quantity" value="1" />
+                                        <span className="qty-plus"
                                         ><i className="fa fa-plus" aria-hidden="true"></i></span>
                                     </div>
-                                    <button type="submit" name="addtocart" className="btn cart-submit d-block">Add to cart</button>
-                                </form>
+                                    <button onClick={handleCartClick} name="addtocart" className="btn cart-submit d-block">Add to cart</button>
+                                </div>
 
                                 <div id="accordion" role="tablist">
                                     <div className="card">
@@ -109,7 +130,7 @@ const ProductDetails = () => {
                 </div>
             </section>
 
-            <div className="modal fade" id="quickview"  role="dialog" aria-labelledby="quickview" aria-hidden="true">
+            <div className="modal fade" id="quickview" role="dialog" aria-labelledby="quickview" aria-hidden="true">
                 <div className="modal-dialog modal-lg modal-dialog-centered" role="document">
                     <div className="modal-content">
                         <button type="button" className="close btn" data-dismiss="modal" aria-label="Close">
@@ -147,8 +168,8 @@ const ProductDetails = () => {
 
                                                     <span className="qty-plus" ><i className="fa fa-plus" aria-hidden="true"></i></span>
                                                 </div>
-                                                <button type="submit" name="addtocart" 
-                                                 className="cart-submit">Add to cart</button>
+                                                <button type="submit" name="addtocart"
+                                                    className="cart-submit">Add to cart</button>
                                                 <div className="modal_pro_wishlist">
                                                     <a href="wishlist.html" target="_blank"><i className="ti-heart"></i></a>
                                                 </div>
@@ -174,9 +195,8 @@ const ProductDetails = () => {
                     </div>
                 </div>
             </div>
-
-
-        </div>
+        </div >
+    </>
     )
 }
 
