@@ -7,7 +7,7 @@ import Cart from '../../../component/Cart/Carts';
 const CartPage = (props) => {
 
     const cartItems = props.cardData;
-    console.log(props)
+    
 
     return (<>
         <div className='about-us'>

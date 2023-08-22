@@ -138,3 +138,82 @@
     font-size: 20px;
     color: #212529;
 }
+
+/* index.css */
+
+.wishlist-container {
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .main-heading {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+  
+  .table-wishlist table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .table-wishlist th,
+  .table-wishlist td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  
+  .product-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .product-image {
+    width: 60px;
+    margin-right: 10px;
+  }
+  
+  .product-name {
+    font-size: 14px;
+    color: #484848;
+  }
+  
+  .price {
+    font-weight: 600;
+  }
+  
+  .in-stock-box {
+    background: #ff0000;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 25px;
+    padding: 4px 10px;
+    display: inline-block;
+    color: #fff;
+  }
+  
+  .round-black-btn {
+    border-radius: 25px;
+    background: #212529;
+    color: #fff;
+    padding: 5px 15px;
+    display: inline-block;
+    border: none;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .round-black-btn:hover {
+    background: transparent;
+    color: #212529;
+  }
+  
+.in-stock-box{
+    display: block;
+}
+  @media (max-width: 767px) {
+    .in-stock-box{
+        display: none;
+
+    }}

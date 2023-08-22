@@ -30,14 +30,14 @@ const TopMenu = () => {
       <Container className='topmenu' >
         <Row className='row'>
           <Col className='cols'>
-            <a className='col' href='#'><BsFillTelephoneFill className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> +0123456789</span></a>
-            <a className='col' href='#'><BiMailSend className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> Example@gmail.com</span></a>
-            <a className='col' href='#'><CiLocationOn className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> 1734 Stonecoal Road</span></a>
+            <NavLink className='col' to="/contact-us"><BsFillTelephoneFill className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> +0123456789</span></NavLink>
+            <NavLink className='col' to="/contact-us"><BiMailSend className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> Example@gmail.com</span></NavLink>
+            <NavLink className='col' target='_blank' to="https://www.google.com/maps/place/Fresh+Inn+Bakers+%26+Sweets/@33.5878486,73.0973648,21z/data=!4m6!3m5!1s0x38dfecafd00c6945:0xed531c2905d9ef6a!8m2!3d33.5879263!4d73.097348!16s%2Fg%2F12mkw96dp?entry=ttu"><CiLocationOn className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> 1734 Stonecoal Road</span></NavLink>
           </Col>
 
           <Col className='cols rtf'>
-            <a className='col' href='#'><BsPerson className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> My Acount</span></a>
-            <a className='col' href='#'><BiDollar className='txtredColor icons' size={sizeIcon} /><span className='txtwhite spanTopMenu'>USD</span></a>
+            <NavLink className='col' to="/home"><BsPerson className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> My Acount</span></NavLink>
+            <NavLink className='col' to="/home"><BiDollar className='txtredColor icons' size={sizeIcon} /><span className='txtwhite spanTopMenu'>USD</span></NavLink>
           </Col>
         </Row>
       </Container >
@@ -65,6 +65,13 @@ const TopMenu = () => {
               <div><NavLink to="/new-arrivals"><span>New Arrivals</span></NavLink></div>
               <div><NavLink to="/offers"><span>Offer</span></NavLink></div>
               <div><NavLink to="/top-selling"><span>Top Selling</span></NavLink></div>
+              <div><NavLink to="/home"><span>Privacy Policy</span></NavLink></div>
+              <div><NavLink to="/home"><span>Orders and Returns</span></NavLink></div>
+              <div><NavLink to="/terms-conditions"><span>Terms & Conditions</span></NavLink></div>
+              <div><NavLink to="/home"><span>Track My Order</span></NavLink></div>
+              <div><NavLink to="/contact-us"><span>Contact Us</span></NavLink></div>
+              <div><NavLink to="/about-us"><span>About US</span></NavLink></div>
+              <div><NavLink to="/top-selling"><span>Help</span></NavLink></div>
             </div>
           </div>
         )}

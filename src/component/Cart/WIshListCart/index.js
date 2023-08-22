@@ -3,53 +3,44 @@ import './index.css';
 
 const Wishlist = ({ selectedProducts }) => {
   return (
-    <div className="container">
-      <div className="col-md-12">
-        <div className="main-heading mb-10">My wishlist</div>
-        {selectedProducts.length > 0 ? (
-          <div className="table-wishlist">
-            <table cellPadding="0" cellSpacing="0" border="0" width="100%">
-              <thead>
-                <tr>
-                  <th width="45%">Product Name</th>
-                  <th width="15%">Unit Price</th>
-                  <th width="15%">Stock Status</th>
-                  <th width="15%"></th>
-                  <th width="10%"></th>
+    <div className="wishlist-container">
+      <div className="main-heading">My wishlist</div>
+      {selectedProducts.length > 0 ? (
+        <div className="table-wishlist">
+          <table cellPadding="0" cellSpacing="0" border="0" width="100%">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Unit Price</th>
+                <th>Stock Status</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {selectedProducts.map((product, index) => (
+                <tr key={index}>
+                  <td>
+                    <div className="product-info">
+                    <img src="https://www.91-img.com/pictures/laptops/asus/asus-x552cl-sx019d-core-i3-3rd-gen-4-gb-500-gb-dos-1-gb-61721-large-1.jpg" alt="" className="mCS_img_loaded" />
+												
+                      <div className="product-name">{product.name}</div>
+                    </div>
+                  </td>
+                  <td className="price">{product.price}</td>
+                  <td>
+                    <span className="in-stock-box">In stock</span>
+                  </td>
+                  <td>
+                    <button className="round-black-btn small-btn">Add Cart</button>
+                  </td>
                 </tr>
-              </thead>
-              <tbody>
-                {selectedProducts.map((product, index) => (
-                  <tr key={index}>
-                    <td width="45%">
-                      <div className="display-flex align-center">
-                        <div className="img-product">
-                          <img src={product.image} alt="" className="mCS_img_loaded" />
-                        </div>
-                        <div className="name-product">{product.name}</div>
-                      </div>
-                    </td>
-                    <td width="15%" className="price">{product.price}</td>
-                    <td width="15%">
-                      <span className="in-stock-box">in shock</span>
-                    </td>
-                    <td width="15%">
-                      <button className="round-black-btn small-btn">Add Cart</button>
-                    </td>
-                    <td width="10%" className="text-center">
-                      
-					  <button className="round-black-btn small-btn">Remove</button>
-                    
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        ) : (
-          <p>Your wishlist is empty.</p>
-        )}
-      </div>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      ) : (
+        <p>Your wishlist is empty.</p>
+      )}
     </div>
   );
 };
