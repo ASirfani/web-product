@@ -270,7 +270,7 @@ img.cart-thumb {
 .cart-list li .image {
     left: 15px;
     position: absolute;
-    top: 20px;
+    top:   20px;
     z-index: 9;
 }
 
@@ -460,7 +460,7 @@ img.cart-thumb {
     }
 
     img.mCS_img_loaded {
-        height: 20px;
+        height: 50px;
     }
   }
   

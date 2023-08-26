@@ -1,8 +1,9 @@
-import { ADD_TO_CART,ADD_TO_FAVORITES } from '../constants';
+import { ADD_TO_CART, ADD_TO_FAVORITES,SET_SIDE_VASIBLITY } from '../constants';
 
 const initialState = {
     cardData: [],
-    favoriteData:[]
+    favoriteData: [],
+    sideVasiblity: true
 };
 
 export default function cardItems(state = initialState, action) {
@@ -12,10 +13,15 @@ export default function cardItems(state = initialState, action) {
                 ...state,
                 cardData: [...state.cardData, action.data]
             };
-            case ADD_TO_FAVORITES:
+        case ADD_TO_FAVORITES:
+            return {
+                ...state,
+                favoriteData: [...state.favoriteData, action.data]
+            };
+            case SET_SIDE_VASIBLITY:
                 return {
                     ...state,
-                    favoriteData: [...state.favoriteData, action.data]
+                    sideVasiblity: action.data
                 };
         default:
             return state;

@@ -17,7 +17,6 @@ import { NavLink } from 'react-router-dom';
 const TopMenu = () => {
   const useToggle = (initialState) => {
     const [toggleValue, setToggleValue] = useState(initialState);
-
     const toggler = () => { setToggleValue(!toggleValue) };
     return [toggleValue, toggler]
   };
@@ -36,7 +35,7 @@ const TopMenu = () => {
           </Col>
 
           <Col className='cols rtf'>
-            <NavLink className='col' to="/home"><BsPerson className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> My Acount</span></NavLink>
+            <NavLink className='col' to="/dashboard"><BsPerson className='txtredColor icons' size={sizeIcon} /> <span className='txtwhite spanTopMenu'> My Acount</span></NavLink>
             <NavLink className='col' to="/home"><BiDollar className='txtredColor icons' size={sizeIcon} /><span className='txtwhite spanTopMenu'>USD</span></NavLink>
           </Col>
         </Row>
@@ -51,7 +50,7 @@ const TopMenu = () => {
           <BsFillTelephoneForwardFill size={20} /> +0123456789
         </div>
         <div className='acount'>
-          <BsPersonCircle size={30} />
+        <NavLink className='mobileAccountIcon'  to="/dashboard"><BsPersonCircle size={30} /></NavLink>
         </div>
       </div>
       <div>
