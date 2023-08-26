@@ -2,7 +2,6 @@
 import React from 'react'
 import './index.css'
 import logoside from '../../asset/photos/logo.jpg'
-
 import { AiOutlineDashboard } from "react-icons/ai";
 import { GiHanger } from "react-icons/gi";
 import { SlBasketLoaded } from 'react-icons/sl'
@@ -19,7 +18,7 @@ const Sidebar = (props) => {
       </div>
 
       {/* Sidebar content */}
-      {sideVasiblity ? <span> Oversview </span> : ''}
+      {sideVasiblity ? <span className='oversview'> Oversview </span> : ''}
       {/* dashboard */}
       {!sideVasiblity ?
         (<div className='visibiiltyside'>
@@ -65,7 +64,7 @@ const Sidebar = (props) => {
         : (
           <div className='rowVisibilityside'>
             <MdOutlineProductionQuantityLimits size={30} />
-            <span >Orders</span>
+            <span >Report</span>
           </div>
 
         )}</div>
