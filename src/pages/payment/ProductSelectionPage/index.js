@@ -5,11 +5,13 @@ import Wishlist from '../../../component/Cart/WIshListCart';
 
 const ProductSelectionPage = (props) => {
     const selectedProducts = props.favoriteData;
-//    console.log(selectedProducts)
+    const addToCards = props.addToCartHandler;
+    const cards  = props.cardData;
+   console.log(addToCards)
     return (
             <div className='about-us'>
                 <h1 className='about titlePage'>Wishlist</h1>
-                <Wishlist selectedProducts={selectedProducts}/>
+                <Wishlist selectedProducts={selectedProducts} cards = {cards} addToCards={addToCards}/>
             </div>
 
 

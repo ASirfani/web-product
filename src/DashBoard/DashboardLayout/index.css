@@ -10,16 +10,17 @@
 }
 
 .dashboard-sidebar {
+  border-right: 1px dashed rgb(182, 175, 175);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: #ffffff;
+
   position: relative;
 }
 
 .dashboard-sidebar-content {
   position: sticky;
   top: 0;
-  height: 100vh;
-  background-color: #ffffff;
-  border-right: 1px dashed rgb(182, 175, 175);
-  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     
 }
 
 .main {

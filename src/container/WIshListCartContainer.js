@@ -1,8 +1,11 @@
 import ProductSelectionPage from '../pages/payment/ProductSelectionPage'
 import { connect } from 'react-redux'
-const mapStateToProps = state => ({
-    favoriteData: state.cardItems.favoriteData
+import {addToCart} from '../state/Action'
+const mapStateToProps=state=>({
+    cardData:state.cardItems.cardData,
+    favoriteData:state.cardItems.favoriteData
 })
-
-
-export default connect(mapStateToProps)(ProductSelectionPage)
+const mapDispatchToProps=dispatch=>({
+    addToCartHandler:data=>dispatch(addToCart(data)),
+})
+export default connect(mapStateToProps,mapDispatchToProps)(ProductSelectionPage)

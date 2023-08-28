@@ -7,7 +7,6 @@ import { Provider } from 'react-redux'
 import {legacy_createStore as createStore} from 'redux'
 import rootReducer from './state/reducers'
 const store=createStore(rootReducer)
-console.log("::::::",store)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

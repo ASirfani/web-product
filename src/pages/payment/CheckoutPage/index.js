@@ -16,8 +16,7 @@ const CheckoutPage = ({ cartItems, totalAmount, completePurchase }) => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // Perform payment processing and call completePurchase when done
-    completePurchase();
+    
   };
 
   return (

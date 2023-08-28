@@ -1,10 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './index.css'
+import { NavLink } from 'react-router-dom';
 const Cart = ({ cartItems }) => {
 	const [quantities, setQuantities] = useState(cartItems.map(() => 1));
 	const [totalPrice, setTotalPrice] = useState(0);
+	const [selectedValue, setSelectedValue] = useState(1.99);
+
+	const handleRadioChange = (event) => {
+		setSelectedValue(parseFloat(event.target.value));
+	};
+
+	useEffect(() => {
+		// Calculate the initial total price
+		const initialTotalPrice = cartItems.reduce((total, item, i) => total + item.price * quantities[i], 0);
+		setTotalPrice(initialTotalPrice);
+	}, []); // Empty dependency array ensures this effect runs only once
+
+	useEffect(() => {
+		// Calculate the initial total price
+		const initialTotalPrice = cartItems.reduce((total, item, i) => total + item.price * quantities[i], 0);
+		setTotalPrice(initialTotalPrice + selectedValue);
+	}, [selectedValue]);
 
 	const handleQuantityChange = (index, newQuantity) => {
 		const newQuantities = [...quantities];
@@ -12,9 +31,13 @@ const Cart = ({ cartItems }) => {
 		setQuantities(newQuantities);
 
 		// Calculate the new total price
-		const newTotalPrice = cartItems.reduce((total, item, i) => total + (item.price * newQuantities[i]), 0);
+		const newTotalPrice = cartItems.reduce((total, item, i) => total + item.price * newQuantities[i], 0);
 		setTotalPrice(newTotalPrice);
 	};
+
+
+
+
 	return (
 		<>
 			{cartItems.length > 0 ? (
@@ -38,7 +61,6 @@ const Cart = ({ cartItems }) => {
 												</a>
 												<span className='txtCart'>{item.name}</span>
 											</td>
-										
 											<td className="price"><span className='txtCart'>{item.price}</span></td>
 											<td className="qty">
 												<div className="quantity">
@@ -63,9 +85,6 @@ const Cart = ({ cartItems }) => {
 								</tbody>
 							</table>
 						</div>
-
-						
-
 					</div>
 					<div className='bottomtablecart'>
 						<div className="col-12 col-md-6 col-lg-4">
@@ -75,18 +94,16 @@ const Cart = ({ cartItems }) => {
 									<p>Select the one you want</p>
 								</div>
 								<div className="custom-control custom-radio mb-30">
-									<input type="radio" id="customRadio1" name="customRadio" className="custom-control-input" />
-									<label className="custom-control-label d-flex align-items-center justify-content-between" for="customRadio1"><span className='txtCart'>Next day delivery</span><span className='txtCart'>$4.99</span></label>
-								</div>
+									<input type="radio" id="age1" name="age" value="4.99"
+										onChange={handleRadioChange} />  Next day delivery $4.99
+									<br />
+									<input type="radio" id="age2" name="age" value="1.99"
+										onChange={handleRadioChange} />  Standard delivery $1.99
+									<br />
+									<input type="radio" id="age3" name="age" value="0" disabled
+										onChange={handleRadioChange} />  $80.00 Buy more $0.00
+									<br />
 
-								<div className="custom-control custom-radio mb-30">
-									<input type="radio" id="customRadio2" name="customRadio" className="custom-control-input" />
-									<label className="custom-control-label d-flex align-items-center justify-content-between" for="customRadio2"><span className='txtCart'>Standard delivery</span><span className='txtCart'>$1.99</span></label>
-								</div>
-
-								<div className="custom-control custom-radio">
-									<input type="radio" id="customRadio3" name="customRadio" className="custom-control-input" />
-									<label className="custom-control-label d-flex align-items-center justify-content-between" for="customRadio3"><span className='txtCart'>Personal Pickup</span><span className='txtCart'>Free</span></label>
 								</div>
 							</div>
 						</div>
@@ -96,13 +113,12 @@ const Cart = ({ cartItems }) => {
 									<h5>Cart total</h5>
 									<p>Final info</p>
 								</div>
-
 								<ul className="cart-total-chart">
 									<li><span className='txtCart'>Subtotal</span> <span className='txtCart'> ${(cartItems.reduce((total, item, index) => total + item.price * quantities[index], 0)).toFixed(2)}</span></li>
-									<li><span className='txtCart'>Shipping</span> <span className='txtCart'>Free</span></li>
+									<li><span className='txtCart'>Shipping</span> <span className='txtCart'>{selectedValue}</span></li>
 									<li><span className='txtCart'><strong>Total</strong></span> <span className='txtCart'><strong>${totalPrice.toFixed(2)}</strong></span></li>
 								</ul>
-								<a href="checkout.html" className="btn karl-checkout-btn">Proceed to checkout</a>
+								<NavLink className="btn karl-checkout-btn" to={"/checkout-page"}>Proceed to checkout</NavLink>
 							</div>
 						</div>
 					</div>
